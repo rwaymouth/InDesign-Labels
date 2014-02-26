@@ -53,7 +53,9 @@ function prepDoc(theDoc) {
     theDoc.viewPreferences.horizontalMeasurementUnits = MeasurementUnits.PICAS;
     theDoc.viewPreferences.verticalMeasurementUnits = MeasurementUnits.PICAS;
     theDoc.viewPreferences.rulerOrigin = RulerOrigin.SPREAD_ORIGIN;
-
+            if (app.dialogs.length > 0){
+                app.dialogs.everyItem().destroy();
+            }
 
 // Check for label layer
     var layers = theDoc.layers;
@@ -99,8 +101,10 @@ function prepDoc(theDoc) {
             with(labelParagrapheStyle){
                 name = paraStyleName;
                 capitalization = Capitalization.ALL_CAPS;
-                appliedFont = "Arial";
-                fontStyle = "Bold";
+                try {
+                    appliedFont = "Arial";
+                    fontStyle = "Bold";
+                } catch(e){};
                 pointSize = 16;
                 justification = Justification.CENTER_ALIGN;
                 fillColor = "Black";
