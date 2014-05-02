@@ -1,4 +1,4 @@
-InDesign-Labels
+InDesign-Labels v1.2
 ===============
 
 Script to label every linked image in a set of InDesign files with their filename, and then output a PDF.
